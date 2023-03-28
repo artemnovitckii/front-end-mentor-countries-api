@@ -1,0 +1,59 @@
+@import "../../styles/variables";
+
+.navigation-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  height: 5rem;
+  width: 100%ç;
+  background-color: white;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0562443);
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: $black;
+    @media (max-width: $sm) {
+      font-size: 0.875rem;
+    }
+  }
+
+  &__dark-mode-toggle {
+    label {
+      display: flex;
+      align-items: center;
+      position: relative;
+      cursor: pointer;
+      user-select: none;
+    }
+    &__icon {
+      margin-right: 0.5rem;
+      color: $black;
+      @media (max-width: $sm) {
+        margin-right: 0.2rem;
+        font-size: 0.75rem;
+      }
+    }
+    &__title {
+      margin-left: 0.5rem;
+      font-size: 1rem;
+      color: $black;
+      @media (max-width: $sm) {
+        font-size: 0.75rem;
+      }
+    }
+  }
+
+  &.dark-mode {
+    background-color: $dark-mode-bg;
+    .navigation-bar__title {
+      color: white;
+    }
+    .navigation-bar__dark-mode-toggle__icon,
+    .navigation-bar__dark-mode-toggle__title {
+      color: white;
+    }
+  }
+}

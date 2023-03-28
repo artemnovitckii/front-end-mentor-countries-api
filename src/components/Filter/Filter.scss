@@ -1,0 +1,32 @@
+@import "../../styles/variables";
+
+.select {
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1rem;
+  border-radius: $border-radius;
+  max-width: 200px;
+  font-size: 14px;
+  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
+  border-radius: 5px;
+  border: none;
+  -moz-appearance: none; /* Firefox */
+  -webkit-appearance: none; /* Safari and Chrome */
+  appearance: none;
+  background-position: calc(100% - 15px) center !important;
+  background: url("data:image/svg+xml,<svg width='15' height='8' viewBox='0 0 15 8' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M1 1L7.24326 6L14 1' stroke='rgb(105, 123, 149)' stroke-width='2' stroke-linecap='round'/></svg>")
+    no-repeat;
+  background-color: #ffffff;
+  &:required:invalid {
+    color: $grey;
+  }
+  &.dark-mode {
+    background-color: $dark-mode-bg;
+    color: white;
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+    }
+  }
+}

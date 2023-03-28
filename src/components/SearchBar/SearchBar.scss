@@ -1,0 +1,56 @@
+@import "../../styles/variables";
+
+.search {
+  display: flex;
+  width: 100%;
+  margin-right: 20px;
+  @media (max-width: $md) {
+    margin-bottom: 20px;
+  }
+  &__field {
+    position: relative;
+    width: 100%;
+
+    &__input {
+      width: 100%;
+      padding-left: 74px;
+      padding-top: 18px;
+      padding-bottom: 18px;
+      font-size: 14px;
+      border: none;
+      background: #ffffff;
+      box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
+      border-radius: 5px;
+      box-sizing: border-box;
+      &:focus {
+        outline: none;
+        border-color: #0077cc;
+        box-shadow: 0 0 0 2px rgba(0, 119, 204, 0.2);
+      }
+    }
+
+    &__icon {
+      position: absolute;
+      align-items: center;
+      left: 32px;
+      top: 17.5px;
+      height: 18px;
+      color: $grey;
+    }
+  }
+  &.dark-mode {
+    .search__field__icon {
+      color: white;
+    }
+    .search__field__input {
+      background: $dark-mode-bg;
+      color: white;
+      &::placeholder {
+        color: white;
+      }
+      &:focus {
+        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+      }
+    }
+  }
+}

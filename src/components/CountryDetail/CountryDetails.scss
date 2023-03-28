@@ -1,0 +1,131 @@
+@import "../../styles/variables";
+
+.country-details {
+  padding-left: 5rem;
+  padding-right: 5rem;
+  padding-bottom: 5rem;
+  height: 100vh;
+  &__back {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    &-button {
+      border: none;
+      background-color: transparent;
+      color: black;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 300;
+      outline: none;
+      padding-left: 32px;
+      padding-right: 32px;
+      border-radius: 6px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      &-icon {
+        padding-right: 10px;
+      }
+    }
+  }
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media (max-width: $lg) {
+      flex-direction: column;
+    }
+  }
+  &__flag {
+    margin-right: 140px;
+    @media (max-width: $xl) {
+      margin-right: 90px;
+    }
+    @media (max-width: $lg) {
+      margin-right: 0;
+    }
+
+    &-image {
+      width: 560px;
+      @media (max-width: $xl) {
+        width: 500px;
+      }
+      @media (max-width: $lg) {
+        width: 100%;
+      }
+
+      border-radius: 6px;
+    }
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    @media (max-width: $sm) {
+      align-items: start;
+    }
+
+    &-text {
+      display: flex;
+      flex-direction: column;
+    }
+    &-sides {
+      display: flex;
+      justify-content: space-between;
+      @media (max-width: $lg) {
+        flex-direction: column;
+      }
+    }
+    &-side1 {
+      display: flex;
+      flex-direction: column;
+      @media (max-width: $lg) {
+        margin-bottom: 20px;
+      }
+    }
+    &-side2 {
+      display: flex;
+      flex-direction: column;
+    }
+    &-name {
+      display: flex;
+      @media (max-width: $sm) {
+        font-size: 22px;
+      }
+    }
+  }
+  &__border {
+    display: flex;
+    margin-top: 70px;
+    flex-direction: column;
+    &-list {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+  }
+  p {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+    margin-bottom: 8px;
+    :last-child {
+      margin-bottom: 0;
+    }
+    @media (max-width: $sm) {
+      font-size: 14px;
+    }
+  }
+  span {
+    font-weight: 300;
+  }
+  &.dark-mode {
+    background-color: #202c36;
+    .country-details__back-button {
+      background-color: $dark-mode-bg;
+      color: white;
+    }
+    p,
+    h1 {
+      color: white;
+    }
+  }
+}

@@ -1,0 +1,51 @@
+@import "../styles/variables";
+
+.global-container {
+  background-color: white;
+  height: 100%;
+  &.dark-mode {
+    background-color: #202c36;
+    .countries-grid {
+      background-color: #202c36;
+    }
+  }
+}
+
+.app-container {
+  margin-left: 5rem;
+  margin-right: 5rem;
+  @media (max-width: $sm) {
+    margin-left: 3.125rem;
+    margin-right: 3.125rem;
+  }
+}
+
+.search-filter {
+  padding-top: 48px;
+  margin-bottom: 48px;
+  display: flex;
+  justify-content: space-between;
+  @media (max-width: $md) {
+    flex-direction: column;
+  }
+}
+
+.countries-grid-wrapper {
+  min-height: 100vh;
+}
+
+.countries-grid {
+  display: grid;
+  height: auto;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(240px, 1fr));
+  grid-gap: 65px;
+  padding-bottom: 45px;
+  place-items: center; /* center single item */
+}
+
+/* if there's only one item */
+.countries-grid > :only-child {
+  grid-column: 1 / -1; /* span across all columns */
+  grid-row: 1 / -1; /* span across all rows */
+}
