@@ -125,7 +125,11 @@ const CountryDetails: React.FC<CountryDetailsProps> = ({}) => {
                 <span className="country-details__border-list">
                   {Object.entries(borders).length
                     ? Object.entries(borders).map(([key, value]) => (
-                        <BorderList country={value} countryCode={key} />
+                        <BorderList
+                          country={value}
+                          countryCode={key}
+                          key={key}
+                        />
                       ))
                     : ` ${data.name.common} has no borders`}
                 </span>
