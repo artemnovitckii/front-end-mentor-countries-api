@@ -10,7 +10,7 @@ const Root = () => {
   const { countries, isLoading } = useContext(CountriesContext);
   const [searchQuery, setSearchQuery] = useState("");
   const [filterRegion, setFilterRegion] = useState("");
-  const { dark, toggleTheme } = useContext(ThemeContext);
+  const { dark } = useContext(ThemeContext);
 
   const handleSearch = (query: string) => {
     setSearchQuery(query);

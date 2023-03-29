@@ -64,27 +64,12 @@ export const CountriesContextProvider = ({
 }: {
   children: ReactNode;
 }) => {
-  console.log("CountriesContextProvider rendered");
   const [countries, setCountries] = useState<Country[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [isError, setIsError] = useState<boolean>(false);
 
   const sortCountries = (countries: Country[]) => {
     return countries.sort((a, b) => a.name.common.localeCompare(b.name.common));
-  };
-
-  const fetchCountries = async () => {
-    try {
-      const response = await fetch("https://restcountries.com/v3.1/all");
-      const data = await response.json();
-      const sortedData = sortCountries(data);
-      setCountries(sortedData);
-      setIsLoading(false);
-      setIsError(false);
-    } catch (error) {
-      setIsError(true);
-      console.log(`Error fetching data ${error}`);
-    }
   };
 
   const getCountryDetailsByCountryCode = (countryCode: string) => {
@@ -96,7 +81,19 @@ export const CountriesContextProvider = ({
   };
 
   useEffect(() => {
-    console.log("making api call...");
+    const fetchCountries = async () => {
+      try {
+        const response = await fetch("https://restcountries.com/v3.1/all");
+        const data = await response.json();
+        const sortedData = sortCountries(data);
+        setCountries(sortedData);
+        setIsLoading(false);
+        setIsError(false);
+      } catch (error) {
+        setIsError(true);
+        console.log(`Error fetching data ${error}`);
+      }
+    };
     fetchCountries();
   }, []);
 

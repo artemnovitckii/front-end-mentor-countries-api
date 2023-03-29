@@ -3,7 +3,6 @@ import ReactDOM from "react-dom/client";
 import "./index.scss";
 import { ThemeContextProvider } from "./context/ThemeContext";
 import {
-  BrowserRouter,
   createBrowserRouter,
   Navigate,
   RouterProvider,

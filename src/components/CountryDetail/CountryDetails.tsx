@@ -11,7 +11,7 @@ interface CountryDetailsProps {
   //   countryCode: string;
 }
 
-const CountryDetails: React.FC<CountryDetailsProps> = ({}) => {
+const CountryDetails: React.FC<CountryDetailsProps> = () => {
   const { countryCode } = useParams();
   const { dark } = useContext(ThemeContext);
   const navigate = useNavigate();
