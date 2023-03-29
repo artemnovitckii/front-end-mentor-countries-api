@@ -14,20 +14,25 @@ const Filter: React.FC<FilterProps> = ({ onFilterChange }) => {
     onFilterChange(event.target.value);
   };
   return (
-    <select
-      className={`select ${dark ? "dark-mode" : ""}`}
-      id="region"
-      name="region"
-      onChange={handleFilterChange}
-      defaultValue=""
-    >
-      <option value="">Filter by Region</option>
-      {regions.map((region) => (
-        <option key={region} value={region}>
-          {region}
-        </option>
-      ))}
-    </select>
+    <>
+      <label htmlFor="region" hidden>
+        Region:
+      </label>
+      <select
+        className={`select ${dark ? "dark-mode" : ""}`}
+        id="region"
+        name="region"
+        onChange={handleFilterChange}
+        defaultValue=""
+      >
+        <option value="">Filter by Region</option>
+        {regions.map((region) => (
+          <option key={region} value={region}>
+            {region}
+          </option>
+        ))}
+      </select>
+    </>
   );
 };
 

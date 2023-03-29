@@ -5,6 +5,7 @@
   padding-right: 5rem;
   padding-bottom: 5rem;
   min-height: 100vh;
+  background-color: #fafafa;
   height: 100%;
   &__back {
     padding-top: 80px;
@@ -17,6 +18,8 @@
       font-size: 16px;
       font-weight: 300;
       outline: none;
+      background-color: white;
+      border-radius: 6px;
       padding-left: 32px;
       padding-right: 32px;
       border-radius: 6px;

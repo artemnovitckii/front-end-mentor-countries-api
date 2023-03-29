@@ -19,14 +19,15 @@ export const ThemeContextProvider = ({
 
   const toggleTheme = () => {
     setDark(!dark);
-    localStorage.setItem("darkMode", `${dark}`);
+    localStorage.setItem("darkMode", `${!dark}`);
   };
 
   //check if the dark theme has been set previously
   useEffect(() => {
     const value = localStorage.getItem("darkMode");
-    if (localStorage && typeof value === "boolean") {
-      setDark(value);
+    console.log("value", value);
+    if (localStorage && typeof value === "string") {
+      setDark(value === "true");
     }
   }, []);
 
